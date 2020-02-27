@@ -3,7 +3,9 @@
 @import "fonts";
 
 // start header
-
+.header__top {
+  background-color: #fff;
+}
 .header__top-inner {
   display: flex;
   justify-content: space-between;
@@ -206,7 +208,6 @@
 .notification__box {
   margin-top: 54px;
   margin-left: 15px;
-  // height: 90px;
   &:hover {
     .header__circle::before {
       color: $bg;
@@ -612,6 +613,7 @@
 // end products
 // start product-slider
 .product-slider {
+  background-color: #fff;
   padding: 110px 0 120px;
   .slick-dots {
     text-align: center;
@@ -759,6 +761,7 @@
 // end author
 // start tutorial
 .tutorial {
+  background-color: #fff;
   padding: 70px 0 120px;
   &__inner {
     display: flex;
@@ -1927,12 +1930,24 @@ button.icon-unsorted {
     }
   }
 }
+.page-box button {
+  border: none;
+  background-color: $green;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  @include f700;
+  color: #fff;
+  padding: 20px 5px;
+  width: 190px;
+}
 // end settings
 
 // start profile
+
 .profile__inner {
   display: flex;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 .profile__aside {
   margin-right: 30px;
@@ -2111,10 +2126,13 @@ button.icon-unsorted {
 // end profile
 
 // start upload
+.upload {
+  padding-bottom: 110px;
+}
 .upload__inner {
   background-color: #fff;
   border: 1px solid #d7d7d7;
-  margin-bottom: 110px;
+
   button {
     color: #fff;
     background-color: $green;
@@ -2245,10 +2263,11 @@ button.icon-unsorted {
 // end upload
 
 // start withdrawals
+
 .withdrawals__inner {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 110px;
+  padding-bottom: 110px;
 }
 .withdrawals__col {
   max-width: 570px;

@@ -76,6 +76,7 @@ body {
   margin-right: 13px;
 }
 .breadcrumbs {
+  background-color: #f4f6f5;
   &__inner {
     padding: 45px 0 40px;
     overflow: hidden;
@@ -121,4 +122,22 @@ body {
 }
 #modal {
   display: none;
+}
+.trend-flesh {
+  display: none;
+}
+.product__item-img.trend {
+  .trend-flesh {
+    display: block;
+    position: relative;
+    span::before {
+      content: "\f0e7";
+      font-family: "Icomoon";
+      color: #fff;
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      font-size: 18px;
+    }
+  }
 }
