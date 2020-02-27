@@ -4,6 +4,8 @@ html {
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 *,
 *::before,
@@ -76,6 +78,8 @@ body {
 .breadcrumbs {
   &__inner {
     padding: 45px 0 40px;
+    overflow: hidden;
+    width: 1200px;
   }
   &__list {
     li {
@@ -114,4 +118,7 @@ body {
     position: absolute;
     left: 0;
   }
+}
+#modal {
+  display: none;
 }

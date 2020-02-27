@@ -482,6 +482,11 @@
   padding: 110px 0;
   background-color: $grey;
 }
+.products__wrapper,
+.product-slider__wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
 .products__inner-btn {
   text-align: center;
   margin-bottom: 60px;
@@ -505,8 +510,13 @@
 }
 .products__inner-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-left: -30px;
   flex-wrap: wrap;
+}
+.products .product__item {
+  flex-basis: calc(25% - 30px);
+  margin-left: 30px;
 }
 .product__item {
   background-color: #fff;
@@ -633,6 +643,82 @@
 // end product-slider
 
 // start advantages
+.advantages {
+  background-color: $bg;
+  padding: 110px 0 115px;
+}
+.advantages__title {
+  color: #fff;
+  margin-bottom: 65px;
+}
+.advantages__inner {
+  display: flex;
+  justify-content: space-between;
+}
+.advantages__item {
+  max-width: 370px;
+  text-align: center;
+  padding: 0 15px;
+  &:hover {
+    .advantages__item-images {
+      background-color: $green;
+      .icon-lock:before,
+      .icon-gift:before,
+      .icon-heart-o:before {
+        color: #fff;
+      }
+    }
+    .advantages__item-title {
+      color: $green;
+    }
+  }
+  &-images {
+    width: 114px;
+    height: 114px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+    transition: all 0.5s;
+  }
+  &-title {
+    font-size: 24px;
+    @include f500;
+    margin-bottom: 25px;
+    color: #fff;
+    transition: all 0.5s;
+  }
+  &-text {
+    font-size: 15px;
+  }
+
+  .icon-lock:before,
+  .icon-gift:before,
+  .icon-heart-o:before {
+    transition: all 0.5s;
+  }
+  .icon-lock:before {
+    content: "\f023";
+    font-family: "Icomoon";
+    font-size: 92px;
+    color: #000;
+  }
+
+  .icon-gift:before {
+    content: "\f06b";
+    font-family: "Icomoon";
+    font-size: 92px;
+    color: #000;
+  }
+  .icon-heart-o:before {
+    content: "\f08a";
+    font-family: "Icomoon";
+    font-size: 82px;
+    color: #000;
+  }
+}
 // end advantages
 
 // start author
@@ -645,7 +731,7 @@
   justify-content: center;
   align-items: center;
   &__box {
-    max-width: 650px;
+    max-width: 653px;
     width: 100%;
     min-height: 215px;
     display: flex;
@@ -658,7 +744,7 @@
     line-height: 30px;
     color: #fff;
     margin-right: 45px;
-    max-width: 260px;
+    max-width: 266px;
     span {
       @include f700;
     }
@@ -1067,10 +1153,14 @@ button.icon-unsorted {
 }
 .product-page__content {
   width: 100%;
+}
+.product-page__content {
   .product__item {
     max-width: 270px;
+    flex-basis: calc(33, 3333% - 30px);
     background-color: #fff;
     transition: all 0.5s;
+    margin-left: 30px;
   }
   .product__item-img {
     min-height: 180px;
@@ -1094,9 +1184,10 @@ button.icon-unsorted {
 }
 .product-page__items {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  margin-left: -30px;
 }
 .pagination__list {
   li {
@@ -1163,6 +1254,7 @@ button.icon-unsorted {
 .product__item {
   &.list {
     max-width: 100%;
+    flex-basis: 100%;
     .product__item-img {
       width: 240px;
       float: left;
@@ -1218,7 +1310,7 @@ button.icon-unsorted {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 0;
+  padding: 16px;
 }
 .product-one__images {
   max-width: 829px;
@@ -1364,10 +1456,13 @@ button.icon-unsorted {
 }
 .productmini {
   margin-bottom: 27px;
+  max-width: 270px;
+  width: 100%;
   display: flex;
   height: 90px;
   align-items: center;
   box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
+  background-color: #fff;
 }
 .productmini__images {
   width: 100px;
@@ -1787,7 +1882,6 @@ button.icon-unsorted {
     color: #444;
   }
   input {
-    max-width: 540px;
     width: 100%;
     height: 40px;
     color: #000;
@@ -1796,7 +1890,6 @@ button.icon-unsorted {
     padding: 0 10px;
   }
   select {
-    max-width: 540px;
     width: 100%;
     height: 40px;
     color: #707070;
@@ -1805,7 +1898,6 @@ button.icon-unsorted {
     padding: 0 10px;
   }
   .jq-selectbox {
-    max-width: 540px;
     width: 100%;
   }
   .jq-selectbox__select {
@@ -2056,9 +2148,6 @@ button.icon-unsorted {
     span {
       color: $green;
     }
-    &::placeholder {
-      color: #707070;
-    }
   }
   select,
   input,
@@ -2069,6 +2158,9 @@ button.icon-unsorted {
     height: 40px;
     background-color: #f9f9f9;
     padding: 0 18px;
+    &::placeholder {
+      color: #707070;
+    }
   }
   textarea {
     resize: none;
@@ -2151,5 +2243,129 @@ button.icon-unsorted {
 }
 
 // end upload
+
+// start withdrawals
+.withdrawals__inner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 110px;
+}
+.withdrawals__col {
+  max-width: 570px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #ededed;
+}
+.withdrawals__title {
+  @include f500;
+  padding: 18px 32px 24px;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 30px;
+  color: $bg;
+  font-size: 24px;
+}
+.withdrawals__content {
+  padding-left: 35px;
+  padding-right: 40px;
+  button {
+    margin-bottom: 50px;
+    color: #fff;
+    background-color: $green;
+    border: none;
+    padding: 15px 36px;
+    cursor: pointer;
+  }
+}
+.withdrawals__form-line {
+  margin-bottom: 40px;
+  label {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    @include f500;
+    margin-bottom: 15px;
+    color: $bg;
+    span {
+      color: $green;
+    }
+  }
+  input,
+  select {
+    width: 100%;
+    display: block;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+    padding: 0 18px;
+    &::placeholder {
+      color: #707070;
+    }
+  }
+  .jq-selectbox {
+    width: 100%;
+  }
+  .jq-selectbox__select {
+    height: 40px;
+    padding: 0 18px;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: #d7d7d7;
+    border-radius: 0px;
+    background: #f9f9f9;
+    box-shadow: none;
+    font-family: "Roboto-Regular", sans-serif;
+    color: #707070;
+    text-shadow: none;
+    line-height: 40px;
+  }
+  .jq-selectbox__trigger-arrow {
+    border: none;
+    font-size: 15px;
+    right: 20px;
+    line-height: 40px;
+    top: 0;
+    &::before {
+      font-family: "icomoon";
+      content: "\f0d7";
+    }
+  }
+  .jq-selectbox__trigger {
+    border-left: none;
+  }
+}
+.withdrawals__content-items {
+  padding-bottom: 35px;
+}
+.withdrawals__content-item {
+  display: flex;
+  height: 42px;
+  align-items: center;
+  color: #444;
+  font-size: 13px;
+  &:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+}
+.withdrawals__content-date {
+  width: 154px;
+  padding-left: 20px;
+  @include f500;
+}
+.withdrawals__content-email {
+  width: 180px;
+  @include f500;
+}
+.withdrawals__content-price {
+  width: 70px;
+  @include f700;
+}
+.withdrawals__content-status {
+  width: 88px;
+  @include f700;
+  &.withdrawals__content-paid {
+    color: $green;
+  }
+}
+// end withdrawals
 
 @import "media";
