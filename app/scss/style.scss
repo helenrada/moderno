@@ -1345,6 +1345,7 @@ button.icon-unsorted {
 }
 .product-one__link {
   a {
+    @include f500;
     color: $grey;
     padding: 14px 8px;
     width: 150px;
@@ -1931,15 +1932,14 @@ button.icon-unsorted {
   }
 }
 .page-box button {
-  border: none;
-  background-color: $green;
-  font-size: 16px;
-  text-transform: uppercase;
-  text-align: center;
-  @include f700;
+  @include f500;
   color: #fff;
-  padding: 20px 5px;
-  width: 190px;
+  background-color: #8bc34a;
+  border: none;
+  padding: 15px 36px;
+  cursor: pointer;
+  margin-left: 196px;
+  margin-bottom: 5px;
 }
 // end settings
 
@@ -2134,6 +2134,7 @@ button.icon-unsorted {
   border: 1px solid #d7d7d7;
 
   button {
+    @include f500;
     color: #fff;
     background-color: $green;
     border: none;
